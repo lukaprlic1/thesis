@@ -11,7 +11,10 @@ Some parameters can be adjusted in the main file (OECDGas), such as the grid ove
 the number of folds used in cross-validation, and more. The number of repetitions can also be changed, although this may increase computational cost.
 
 Demand function specification:
+
 ln(gas_it/car_it) = η_i + g(ln(price_it)) + ε_it 
+
+where  η_i are country-fixed effects, g some function in prices, and ε_it an error term.
 
 First-differencing this panel gets rid of fixed effects and we end up in an additive non-parametric framework to which I 
 can apply the model:
