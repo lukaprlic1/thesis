@@ -1,4 +1,7 @@
-setwd("/Users/lukaprlic/Desktop/NonparamIV")
+# set your working directory
+
+rm(list=ls())
+
 source("bits_comparison.R")
 library(pracma)
 library(compiler)
@@ -20,6 +23,8 @@ library(dplyr)
 
 data("OECDGas")
 # summary(OECDGas)
+
+# first-differencing the data to remove country fixed-effects (see README for the model specification)
 
 OECDGas_diff <- OECDGas %>%
   arrange(country, year) %>%
@@ -67,19 +72,26 @@ OECDGas_diff <- OECDGas_diff %>%
 # Remove rows with NA in any column
 OECDGas_diff <- na.omit(OECDGas_diff)
 
+# specifying the distribution
 
 kernel <- "laplace"
 
+# number of folds used in CV
 nfold <- 4
 
+# variables used to assess lambda on
 sdu <- 1
-ll <- 10 
+ll <- 30
 
 pmin <- .00001
 pmax <- .5
+
 pp <- seq(pmin,pmax,length=ll)
 lambda <- (pp/(1-pp))/(sdu^2)
-  nres <- 2
+
+# number of repetitions
+nres <- 50
+
 for (sim_n in 1:nres){
     OECDGas_diff <- OECDGas_diff[sample(nrow(OECDGas_diff)),]
     n <- nrow(OECDGas_diff)
