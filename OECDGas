@@ -260,7 +260,6 @@ for (sim_n in 1:nres){
   meang1 <- apply(g1hativ, 1, mean)
   meang2 <- apply(g2hativ, 1, mean)
   
-  # this part might be unnecessary...
   ## NORMALIZE by imposing g_i(0)=0
   g1_norm <- g1hativ - (meang1[leval/2]+meang1[leval/2+1])/2
   g2_norm <- g2hativ - (meang2[leval/2]+meang2[leval/2+1])/2
@@ -269,7 +268,7 @@ for (sim_n in 1:nres){
   meang1_norm <- apply(g1hativ, 1, mean) - (meang1[leval/2]+meang1[leval/2+1])/2
   meang2_norm <- apply(g2hativ, 1, mean) - (meang2[leval/2]+meang2[leval/2+1])/2
   
-  ## Using GAM to comapre our estimator (package "mgcv")
+  ## Using GAM to compare our estimator (package "mgcv")
   
   gam1 <- res[1:leval,s3]
   gam2 <- res[1:leval,s4]
