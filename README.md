@@ -9,3 +9,11 @@ It uses the bits_comparison.R file, which contains the necessary functions to ru
 
 Some parameters can be adjusted in the main file (OECDGas), such as the grid over which lambda (the regularization parameter) is estimated, 
 the number of folds used in cross-validation, and more. The number of repetitions can also be changed, although this may increase computational cost.
+
+Demand function specification:
+ln(gas_it/car_it) = η_i + g(ln(price_it)) + ε_it 
+
+First-differencing this panel gets rid of fixed effects and we end up in an additive non-parametric framework to which I 
+can apply the model:
+
+∆ln(gas_it/car_it) = g_t(ln(price_it)) - g_(t-1)(ln(price_it)) + ε_it - ε_i(t-1)
