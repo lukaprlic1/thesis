@@ -1,5 +1,3 @@
-OECDGas is the main file that implements the method developed in my Master Thesis on One-Step Additive Non-parametric IV Estimator.
-OECDGas uses bits_comparison.R file shich contains the functions necessary to run the method.
+OECDGas is the main file that implements the method developed in my Master’s thesis on the One-Step Additive Non-Parametric IV Estimator. It uses the bits_comparison.R file, which contains the necessary functions to run the method.
 
-Some of the parameters can be changed in the main file (OECDGas), like the grid on which lambda (regularization parameter) is estimated, or the number of fold used in cross-validation etc.
-Number of repetitions can also be changed, however at the expense of computational cost.
+Some parameters can be adjusted in the main file (OECDGas), such as the grid over which lambda (the regularization parameter) is estimated, the number of folds used in cross-validation, and more. The number of repetitions can also be changed, although this may increase computational cost.
