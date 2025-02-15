@@ -12,11 +12,11 @@ the number of folds used in cross-validation, and more. The number of repetition
 
 Demand function specification:
 
-ln(gas_it/car_it) = η_i + g(ln(price_it)) + ε_it 
+$ln(gas_{it}/car_{it}) = η_i + g(ln(price_{it})) + ε_{it}$ 
 
-where  η_i are country-fixed effects, g some function in prices, and ε_it an error term.
+where  $η_i$ are country-fixed effects, g some function in prices, and $ε_{it}$ an error term.
 
 First-differencing this panel gets rid of fixed effects and we end up in an additive non-parametric framework to which I 
 can apply the model:
 
-∆ln(gas_it/car_it) = g_t(ln(price_it)) - g_(t-1)(ln(price_it)) + ε_it - ε_i(t-1)
+$∆ln(gas_{it}/car_{it}) = g_t(ln(price_{it})) - g_{t-1}(ln(price_{i(t-1)})) + ε_{it} - ε_{i(t-1)}$
